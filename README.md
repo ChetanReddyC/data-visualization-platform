@@ -34,7 +34,7 @@ This project is a data visualization assignment project from AnswersAi.
 
 7.  **After login you will be redirected to the dashboard page.**
 
-
+## intentionally havent used .env file as this is not a big big deal that firebase project details later i will delete that project from firebase after the process is completed.
 
 
 ## Features implemented.
