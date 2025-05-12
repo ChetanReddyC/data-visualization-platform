@@ -1,0 +1,236 @@
+.chartContainer {
+  background-color: #222324;
+  border-radius: 12px;
+  padding: 20px;
+  color: #E1E2E2;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  overflow: hidden;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.chartTitleDropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.chartControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chartTypeButtons {
+  display: flex;
+  background: rgba(42, 42, 42, 0.6);
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.chartTypeButton {
+  background: none;
+  border: none;
+  color: #E1E2E2;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.chartTypeButton.active {
+  background: #C8E972;
+  color: #222324;
+}
+
+.chartToolButton {
+  width: 28px;
+  height: 28px;
+  background: rgba(42, 42, 42, 0.6);
+  border: none;
+  border-radius: 4px;
+  color: #E1E2E2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chartToolButton.active {
+  background: #C8E972;
+  color: #222324;
+}
+
+.chartContent {
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+
+.yAxisLabels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 8px;
+  font-size: 12px;
+  color: #909090;
+}
+
+.yAxisLabel {
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.chartAreaWrapper {
+  flex-grow: 1;
+  position: relative;
+}
+
+.customTooltip {
+  background-color: #2D2E30;
+  border: 1px solid #3A3B3C;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 130px;
+  z-index: 10;
+}
+
+.tooltipLabel {
+  font-size: 12px;
+  color: #909090;
+  margin-bottom: 5px;
+}
+
+.tooltipRow {
+  margin: 5px 0;
+}
+
+.tooltipValue {
+  font-size: 18px;
+  font-weight: 600;
+  color: #C8E972;
+}
+
+.tooltipPercentage {
+  font-size: 12px;
+  color: #909090;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tooltipIcon {
+  color: #C8E972;
+  font-size: 14px;
+}
+
+.tooltipInfoButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(57, 57, 57, 0.123);
+  border: none;
+  color: #E1E2E2;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.chartFooter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-left: 25px;
+}
+
+.monthLabel {
+  text-align: center;
+  position: relative;
+}
+
+.axisLabel {
+  font-size: 12px;
+  color: #909090;
+}
+
+.axisLabel.active {
+  color: #C8E972;
+  font-weight: 600;
+}
+
+.currentLabel {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: #C8E972;
+  white-space: nowrap;
+}
+
+/* Selected variables display */
+.selectedVariables {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(57, 57, 57, 0.6);
+  align-items: center;
+}
+
+.selectedVariables span:first-child {
+  font-size: 12px;
+  color: #909090;
+}
+
+.variableTag {
+  background: rgba(200, 233, 114, 0.2);
+  color: #C8E972;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .chartContainer {
+    padding: 15px;
+    min-height: 150px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .chartContainer {
+    padding: 10px;
+    min-height: 120px;
+  }
+} 

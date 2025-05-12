@@ -1,0 +1,262 @@
+/* Global Responsive Utilities CSS */
+
+:root {
+  /* Breakpoint variables */
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 992px;
+  --breakpoint-lg: 1200px;
+}
+
+/* Ensure responsive behavior for the entire app */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Lock scrolling on desktop but allow it on mobile */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Lock scrolling by default (desktop) */
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+/* Enable scrolling for content containers inside the app */
+.scrollable-content {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive typography */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive spacing classes */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Responsive utilities */
+.d-none {
+  display: none !important;
+}
+
+.d-block {
+  display: block !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+/* Tablet breakpoint (768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+  
+  .d-sm-none {
+    display: none !important;
+  }
+  
+  .d-sm-block {
+    display: block !important;
+  }
+  
+  .d-sm-flex {
+    display: flex !important;
+  }
+  
+  /* Disable scrolling and hide scrollbars on desktop for scrollable-content */
+  .scrollable-content {
+    overflow-y: hidden !important;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollable-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
+/* Enable scrolling on tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  html, #root {
+    position: static;
+    height: auto;
+    overflow: auto;
+  }
+  body {
+    position: static;
+    height: auto;
+    overflow: auto;
+  }
+  .scrollable-content {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: auto;
+    scrollbar-width: auto;
+    scrollbar-color: #525252 #161618; /* Firefox: thumb and track */
+  }
+  .scrollable-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollable-content::-webkit-scrollbar-track {
+    background: #161618;
+  }
+  .scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #525252;
+    border-radius: 4px;
+  }
+}
+
+/* Medium devices (992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  .d-md-none {
+    display: none !important;
+  }
+  
+  .d-md-block {
+    display: block !important;
+  }
+  
+  .d-md-flex {
+    display: flex !important;
+  }
+}
+
+/* Large devices (1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .d-lg-none {
+    display: none !important;
+  }
+  
+  .d-lg-block {
+    display: block !important;
+  }
+  
+  .d-lg-flex {
+    display: flex !important;
+  }
+}
+
+/* Extra Large devices (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Responsive utilities for small screens */
+@media (max-width: 767px) {
+  html, #root {
+    position: static; /* Allow scrolling on mobile at html and root levels */
+    height: auto;
+    overflow: auto;
+  }
+  body {
+    position: static; /* Allow scrolling on mobile */
+    overflow: auto;
+    height: auto;
+  }
+  
+  .mobile-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .mobile-hide {
+    display: none !important;
+  }
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 479px) {
+  .xs-hide {
+    display: none !important;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 0.875rem;
+  }
+} 

@@ -1,0 +1,31 @@
+<svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Upward Arrow -->
+  <path
+    d="M60 80V30"
+    stroke="#B9B9B9"
+    stroke-width="14"
+    stroke-linecap="round"
+  />
+  <path
+    d="M35 55L60 30L85 55"
+    stroke="#B9B9B9"
+    stroke-width="14"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- U-shaped Tray -->
+  <path
+    d="M20 80
+       Q13 80 13 87
+       L13 115
+       Q13 127 25 127
+       L95 127
+       Q107 127 107 115
+       L107 87
+       Q107 80 100 80"
+    stroke="#B9B9B9"
+    stroke-width="14"
+    stroke-linecap="round"
+    fill="none"
+  />
+</svg>

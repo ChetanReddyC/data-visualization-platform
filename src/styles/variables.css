@@ -1,0 +1,42 @@
+:root {
+
+  --color-background-main: #0E0D0D; 
+  --color-background-content: #161618; 
+  --color-background-card: #222324;
+  --color-background-sidebar-item-hover: rgba(255, 255, 255, 0.1);
+  --color-background-button-active-tab: #242424;
+  --color-background-searchbar: rgba(44, 46, 51, 0.3);
+  --color-background-graph-dropdown: rgba(24, 24, 26, 0.5);
+
+  --color-text-primary: #FCFCFC; /* fill_AIV9OY / fill_HE1PZP or similar general white */
+  --color-text-secondary: #EDEDED; /* fill_AFEVSD (Search text) */
+  --color-text-tertiary: #BBBBBB; /* fill_KY9LJH (KPI description) */
+  --color-text-icon-default: #858882; /* fill_CMBII6 (Sidebar icons) */
+  --color-text-icon-info: #888888; /* fill_N96JT1 (KPI card icons) */
+  --color-text-placeholder: #878787; /* fill_O7529I ("Now" text in graph) */
+
+  --color-border-primary: #525252; /* stroke_O7BQM9 or stroke_01GZZ7 (Cards, Tables, Graphs) */
+  --color-border-secondary: #5A5A5A; /* stroke_ISAJSV or stroke_H6JCYZ (Active tabs, Search bar) */
+  --color-border-sidebar: #525252; /* stroke_UD44BK (Sidebar right border) */
+  --color-border-graph-dropdown: rgba(90, 90, 90, 0.63); /* stroke_HB1CTP or stroke_R5H2CS */
+
+  --color-accent-primary: #C8E972; /* fill_LILHOB / stroke_YI76PJ (Active table tab, specific buttons) */
+  --color-accent-primary-text: #000000; /* Text on primary accent bg */
+  --color-accent-secondary: #DAFD7F; /* fill_P0J8PM (Best scenario header icon) */
+  --color-accent-profit: #C9FF3B; /* fill_ICB9OM (Best scenario text - profit) */
+  --color-accent-demand: #B3E237; /* fill_RTZ82D (Best scenario text - demand) */
+
+
+  --font-family-primary: 'Inter', sans-serif;
+  --font-family-secondary: 'Roobert TRIAL', sans-serif;
+
+  /* Common Border Radii */
+  --border-radius-small: 3px;
+  --border-radius-medium: 5px;
+  --border-radius-large: 10px;
+  --border-radius-round: 56px;
+
+  /* Box Shadows */
+  --box-shadow-card: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --box-shadow-graph-highlight: 0px 4px 14.4px 0px rgba(200, 233, 114, 1);
+} 

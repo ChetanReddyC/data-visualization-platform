@@ -1,0 +1,7 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #0E0D0D; /* Main primary background */
+  color: #FCFCFC; /* Default text color */
+} 

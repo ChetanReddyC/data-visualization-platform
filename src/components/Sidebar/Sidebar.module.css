@@ -1,0 +1,312 @@
+.sidebar {
+  width: 250px;
+  background: #000000;
+  /* border-right: 0.5px solid var(--color-border-sidebar, #525252); */
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, transform 0.3s ease;
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  overflow-y: hidden; /* Lock scrolling on desktop */
+}
+
+.sidebar.collapsed {
+  width: 65px; /* Example collapsed width */
+}
+
+.sidebar.collapsed .menuItem span,
+.sidebar.collapsed .profileLink span {
+  display: none;
+}
+
+.sidebar.collapsed .navLink {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.logoSection {
+  margin-bottom: 15px;
+  padding-left: 5px; /* Align with items a bit more */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: var(--color-text-primary, #FFFFFF);
+  cursor: pointer;
+  padding: 10px;
+  display: flex; /* Ensure icon inside is aligned if needed */
+}
+
+.menuButton img,
+.menuButton svg {
+  width: 24px; /* Adjust size */
+  height: 24px;
+}
+
+.menuItems {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Pushes profile section to bottom */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Gap between items from Figma Frame 3453 (gap: 40px, but seems too large for items) - using a smaller one */
+  overflow-y: hidden; /* Lock scrolling on desktop */
+}
+
+.menuItem {
+  padding: 0; /* Remove padding if navLink handles it */
+}
+
+/* Base styles for all navigation links */
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  text-decoration: none;
+  color: var(--color-text-icon-default, #858882); /* Default icon/text color from Figma (e.g. bell icon) */
+  border-radius: 8px;
+  gap: 15px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover,
+.navLink.active {
+  background-color: var(--color-background-sidebar-item-hover, rgba(255, 255, 255, 0.1)); /* Subtle hover/active state */
+  color: var(--color-text-primary, #FFFFFF);
+}
+
+.navLink.active {
+    /* Specific active styles if different from hover, e.g. a persistent background or different text weight */
+    /* font-weight: bold; */ /* Example */
+}
+
+.navLink img,
+.navLink svg,
+.navLink.active img,
+.navLink.active svg {
+  width: 18px; /* Slightly smaller icon size */
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  flex-shrink: 0;
+  /* Fill/stroke should be controlled by parent's color or specific CSS for SVG states */
+}
+
+.navLink span {
+  font-size: 14px;
+  font-family: var(--font-family-primary, 'Inter', sans-serif); /* From Figma text styles */
+  white-space: nowrap; /* Prevent text wrapping when sidebar collapses */
+  overflow: hidden; /* Hide text that overflows when collapsing */
+}
+
+.profileSection {
+  margin-top: auto; /* Pushes to the bottom */
+}
+
+.profileLink {
+  /* Inherits .navLink styles, can add specific overrides here if needed */
+  /* Example: different padding or color for profile */
+}
+
+/* Mobile and Tablet styles */
+.mobileMenuButton {
+  display: none;
+}
+
+.mobileCloseButton {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+.bottomMobileNav {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  background: rgba(15, 15, 16, 0.071);
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 50;
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 0 15px rgba(200, 233, 114, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.bottomMobileNav.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bottomMobileNav:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(200, 233, 114, 0), 
+    rgba(200, 233, 114, 0.5), 
+    rgba(200, 233, 114, 0)
+  );
+  border-radius: 16px 16px 0 0;
+  opacity: 0.8;
+}
+
+.bottomMobileNav:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.05) 40%, 
+    rgba(255, 255, 255, 0.02) 60%, 
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  border-radius: 16px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.mobileNavLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-text-icon-default, #858882);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeSlideUp 0.5s forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileNavLink.active {
+  color: var(--color-text-primary, #FFFFFF);
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 15px rgba(200, 233, 114, 0.25);
+  transform: translateY(-4px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mobileNavLink:hover {
+  color: var(--color-text-primary, #FFFFFF);
+  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(200, 233, 114, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileNavLink svg, 
+.mobileNavLink img {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.2));
+}
+
+.mobileNavLink.active svg,
+.mobileNavLink.active img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 5px rgba(200, 233, 114, 0.3));
+}
+
+/* Tablet Breakpoint (768px - 991px) */
+@media screen and (max-width: 991px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .overlay {
+    display: none;
+  }
+  
+  .bottomMobileNav {
+    display: flex;
+  }
+  
+  :global(body) {
+    padding-bottom: 85px;
+  }
+}
+
+/* Mobile Breakpoint (up to 767px) */
+@media screen and (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .overlay {
+    display: none;
+  }
+  
+  .bottomMobileNav {
+    display: flex;
+  }
+  
+  :global(body) {
+    padding-bottom: 85px;
+  }
+}
+
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+  .bottomMobileNav {
+    height: 65px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+  }
+  
+  .mobileNavLink svg, 
+  .mobileNavLink img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  :global(body) {
+    padding-bottom: 75px;
+  }
+} 
